@@ -5,10 +5,12 @@ import Test.Framework
 import Test.Framework.Providers.HUnit
 import Test.HUnit
 
+import HarryPotterKata
+
 main = defaultMain tests
 
 tests = hUnitTestToTests $ TestList $
-  [alwaysFails]
+  [noBookCosts0Euro]
 
-alwaysFails =
-  True ~?= False
+noBookCosts0Euro =
+  priceForBooks [] ~?= 0.0
